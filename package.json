@@ -1,0 +1,22 @@
+{
+  "name": "syncity",
+  "version": "1.0.0",
+  "description": "Syncity: A real-time, offline-first, plugin-based state synchronization framework",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "real-time",
+    "offline-first",
+    "state-sync",
+    "plugin",
+    "framework"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.13.0"
+  }
+}

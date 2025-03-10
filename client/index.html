@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syncity – Next-Generation Real-Time State Synchronization</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #0052cc;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .feature {
+      flex: 1 1 45%;
+      margin: 1rem;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .feature h3 {
+      margin-top: 0;
+    }
+    .cta {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .cta button {
+      background: #0052cc;
+      color: #fff;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: #fff;
+    }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.6);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 600px;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .install-code {
+      background: #f4f4f4;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-family: monospace;
+      margin-top: 1rem;
+      user-select: all;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Syncity</h1>
+    <p>The Next-Generation Real-Time & Offline-First State Synchronization Library</p>
+  </header>
+  
+  <div class="container">
+    <section class="intro">
+      <h2>Why Syncity?</h2>
+      <p>Syncity provides seamless real-time state synchronization, advanced conflict resolution, and offline-first capabilities—all in a modular, developer-friendly package. Perfect for building collaborative applications, live dashboards, and more.</p>
+    </section>
+    
+    <section class="features">
+      <div class="feature">
+        <h3>Real-Time Sync</h3>
+        <p>Automatically propagate state changes across all connected clients.</p>
+      </div>
+      <div class="feature">
+        <h3>Offline-First</h3>
+        <p>Effortlessly handle intermittent connectivity with intelligent queuing and caching.</p>
+      </div>
+      <div class="feature">
+        <h3>Conflict Resolution</h3>
+        <p>Integrated strategies to merge concurrent updates and keep your data consistent.</p>
+      </div>
+      <div class="feature">
+        <h3>Plugin Architecture</h3>
+        <p>Extend functionality with custom plugins, tailored to your needs.</p>
+      </div>
+      <div class="feature">
+        <h3>Easy Integration</h3>
+        <p>Simple APIs and ready-made integrations for popular frameworks.</p>
+      </div>
+      <div class="feature">
+        <h3>High Performance</h3>
+        <p>Optimized for scalability, security, and low-latency operations.</p>
+      </div>
+    </section>
+    
+    <div class="cta">
+      <button id="getStartedBtn">Get Started with Syncity</button>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Syncity. All rights reserved - By Pallav Singh.</p>
+  </footer>
+  
+  <div id="getStartedModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Get Started with Syncity</h2>
+      <p>Install the package using npm:</p>
+      <div class="install-code" id="installCode">npm install syncity</div>
+      <p>Import and initialize Syncity in your project:</p>
+      <pre class="install-code">
+import SyncityClient from 'syncity-client';
+const syncity = new SyncityClient({ host: 'http://your-server.com' });
+      </pre>
+      <p>Visit our <a href="https://github.com/yourusername/syncity" target="_blank">GitHub repository</a> for detailed documentation and examples.</p>
+    </div>
+  </div>
+  
+  <script>
+    // Modal functionality
+    const modal = document.getElementById('getStartedModal');
+    const btn = document.getElementById('getStartedBtn');
+    const span = document.getElementById('closeModal');
+    
+    // When the user clicks the button, open the modal 
+    btn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+    
+    // When the user clicks on <span> (x), close the modal
+    span.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+    
+    // Optionally, copy installation command on click
+    document.getElementById('installCode').addEventListener('click', () => {
+      const code = document.getElementById('installCode').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert('Installation command copied to clipboard!');
+      });
+    });
+    
+    // Register the service worker for offline caching
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+</body>
+</html>
