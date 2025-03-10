@@ -1,7 +1,8 @@
 # syncity
 Syncity Next-Generation Real-Time State Synchronization &amp; Offline-First Library 
 
-# Syncity is a cutting-edge JavaScript library that simplifies the development of collaborative and real-time web applications. It provides seamless state synchronization between clients and servers using WebSockets, advanced conflict resolution, and offline-first capabilities—all wrapped in a modular, developer-friendly plugin architecture.
+# Syncity 
+is a cutting-edge JavaScript library that simplifies the development of collaborative and real-time web applications. It provides seamless state synchronization between clients and servers using WebSockets, advanced conflict resolution, and offline-first capabilities—all wrapped in a modular, developer-friendly plugin architecture.
 
 # Key Features:
 
